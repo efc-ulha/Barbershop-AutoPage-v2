@@ -1,0 +1,82 @@
+Build a full-stack web application that allows users to automatically generate a mockup homepage for their barbershop based on a form they fill out.
+
+The goal is to let users preview a site made from one of two available templates, customized with their business details and AI-generated text. Here's what the app should do:
+
+🔶 FUNCTIONALITY OVERVIEW
+Create a form that asks the user for:
+
+Full Name
+
+Email Address
+
+Phone Number
+
+Business Name
+
+Business Type (default: "Barbershop")
+
+Business Location
+
+Services or Products (comma-separated or bullet points)
+
+Short Business Description
+
+Logo Upload (optional, image file)
+
+After submitting the form:
+
+Use an AI text generator (or placeholder function) to produce:
+
+A homepage headline and tagline
+
+A short "About Us" section
+
+Descriptions for services
+
+A call to action (like "Book Now" or "Visit Us Today")
+
+Dynamically fill one of two predefined HTML templates with:
+
+The form information (like business name and location)
+
+The AI-generated text
+
+The uploaded logo (embedded as <img> if provided)
+
+Let the user choose between two template designs before submitting the form.
+
+Templates can be HTML files (e.g., template1.html, template2.html)
+
+Insert dynamic content into them using placeholders
+
+After generation, show the customized homepage mockup as a live HTML preview on the same page.
+
+Can be rendered using an <iframe> or embedded HTML
+
+Below the preview, include two buttons:
+
+“Deploy My Website”
+
+“Request Personalization”
+
+If the user clicks “Deploy”:
+
+Save the generated HTML file (e.g., in a /mockups/ folder)
+
+Store it with a unique name (based on email or phone number)
+
+🔶 TECHNICAL NOTES
+No database for now — store files locally or in memory
+
+The preview must not be downloadable; it's only to view on the site
+
+Make the code modular so that OpenAI API can be added later
+
+Keep the UI clean and responsive using basic styling or a framework like Bootstrap
+
+Optional (not required now):
+Stripe/PayPal integration for deployment
+
+Admin dashboard for submitted mockups
+
+Email the HTML mockup link to the user
