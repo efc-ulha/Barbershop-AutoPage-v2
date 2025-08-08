@@ -29,15 +29,15 @@ export default function WebsitePreview({ data, onClose, onRequestPersonalization
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden">
-        <div className="p-6 border-b border-slate-200 flex justify-between items-center">
+      <div className="bg-white rounded-2xl max-w-6xl w-full max-h-[90vh] flex flex-col">
+        <div className="p-6 border-b border-slate-200 flex justify-between items-center flex-shrink-0">
           <h3 className="text-xl font-bold text-fa-secondary">Your Website Preview</h3>
           <Button variant="ghost" size="sm" onClick={onClose}>
             <i className="fas fa-times text-xl"></i>
           </Button>
         </div>
         
-        <div className="p-6">
+        <div className="flex-1 overflow-y-auto p-6">
           <div className="bg-slate-100 rounded-lg p-8 mb-6">
             <Card className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="bg-gradient-to-r from-fa-slate-800 to-fa-slate-900 text-white p-8 text-center">
@@ -74,24 +74,24 @@ export default function WebsitePreview({ data, onClose, onRequestPersonalization
               </CardContent>
             </Card>
           </div>
-          
-          <div className="flex gap-4">
-            <Button 
-              onClick={handleProceedToPayment}
-              className="flex-1 bg-fa-accent hover:bg-emerald-600 text-white"
-            >
-              <i className="fas fa-credit-card mr-2"></i>
-              Deploy My Website - $199
-            </Button>
-            <Button 
-              onClick={onRequestPersonalization}
-              variant="outline"
-              className="flex-1 border-fa-primary text-fa-primary hover:bg-fa-primary hover:text-white"
-            >
-              <i className="fas fa-palette mr-2"></i>
-              Request Personalization
-            </Button>
-          </div>
+        </div>
+        
+        <div className="p-6 border-t border-slate-200 flex gap-4 flex-shrink-0">
+          <Button 
+            onClick={handleProceedToPayment}
+            className="flex-1 bg-fa-accent hover:bg-emerald-600 text-white"
+          >
+            <i className="fas fa-credit-card mr-2"></i>
+            Deploy My Website - $199
+          </Button>
+          <Button 
+            onClick={onRequestPersonalization}
+            variant="outline"
+            className="flex-1 border-fa-primary text-fa-primary hover:bg-fa-primary hover:text-white"
+          >
+            <i className="fas fa-palette mr-2"></i>
+            Request Personalization
+          </Button>
         </div>
       </div>
     </div>

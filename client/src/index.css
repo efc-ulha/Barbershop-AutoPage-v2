@@ -13,21 +13,24 @@
   --card-foreground: hsl(222, 84%, 4.9%);
   --border: hsl(214, 32%, 91%);
   --input: hsl(214, 32%, 91%);
-  --primary: hsl(207, 90%, 54%);
+  --primary: hsl(17, 88%, 40%);
   --primary-foreground: hsl(0, 0%, 100%);
   --secondary: hsl(210, 40%, 96%);
   --secondary-foreground: hsl(222, 84%, 4.9%);
-  --accent: hsl(142, 76%, 36%);
+  --accent: hsl(27, 87%, 67%);
   --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --ring: hsl(207, 90%, 54%);
+  --ring: hsl(17, 88%, 40%);
   --radius: 0.5rem;
   
-  /* Custom FA Web Design colors */
-  --fa-primary: hsl(207, 90%, 54%);
-  --fa-secondary: hsl(215, 28%, 17%);
-  --fa-accent: hsl(142, 76%, 36%);
+  /* Custom Barbershop-themed colors */
+  --fa-primary: hsl(17, 88%, 40%); /* Rich barber red */
+  --fa-secondary: hsl(215, 28%, 17%); /* Dark professional */
+  --fa-accent: hsl(27, 87%, 67%); /* Warm copper/bronze */
+  --fa-barber-red: hsl(0, 86%, 49%); /* Classic barber pole red */
+  --fa-barber-blue: hsl(218, 79%, 35%); /* Classic barber pole blue */
+  --fa-gold: hsl(45, 93%, 47%); /* Premium gold accent */
   --fa-slate-50: hsl(210, 40%, 98%);
   --fa-slate-600: hsl(215, 20%, 45%);
   --fa-slate-700: hsl(215, 25%, 27%);
@@ -66,9 +69,16 @@
     @apply font-sans antialiased bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   }
+  
+  /* Professional barbershop typography */
+  .barber-heading {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
 }
 
-/* Custom utility classes for FA Web Design */
+/* Custom utility classes for Barbershop Design */
 .text-fa-primary {
   color: var(--fa-primary);
 }
@@ -79,6 +89,18 @@
 
 .text-fa-accent {
   color: var(--fa-accent);
+}
+
+.text-fa-barber-red {
+  color: var(--fa-barber-red);
+}
+
+.text-fa-barber-blue {
+  color: var(--fa-barber-blue);
+}
+
+.text-fa-gold {
+  color: var(--fa-gold);
 }
 
 .bg-fa-primary {
@@ -93,6 +115,18 @@
   background-color: var(--fa-accent);
 }
 
+.bg-fa-barber-red {
+  background-color: var(--fa-barber-red);
+}
+
+.bg-fa-barber-blue {
+  background-color: var(--fa-barber-blue);
+}
+
+.bg-fa-gold {
+  background-color: var(--fa-gold);
+}
+
 .bg-fa-slate-50 {
   background-color: var(--fa-slate-50);
 }
@@ -105,14 +139,69 @@
   color: var(--fa-slate-700);
 }
 
+/* Barbershop-themed gradients */
 .gradient-hero {
-  background: linear-gradient(135deg, var(--fa-slate-900) 0%, var(--fa-slate-800) 50%, var(--fa-slate-900) 100%);
+  background: linear-gradient(135deg, var(--fa-slate-900) 0%, var(--fa-slate-800) 50%, var(--fa-primary) 100%);
+}
+
+.gradient-barber {
+  background: linear-gradient(135deg, var(--fa-barber-red) 0%, var(--fa-primary) 50%, var(--fa-barber-blue) 100%);
 }
 
 .gradient-fa-primary {
-  background: linear-gradient(135deg, var(--fa-primary) 0%, hsl(219, 90%, 54%) 100%);
+  background: linear-gradient(135deg, var(--fa-primary) 0%, var(--fa-accent) 100%);
 }
 
 .gradient-fa-accent {
-  background: linear-gradient(135deg, var(--fa-accent) 0%, hsl(160, 76%, 36%) 100%);
+  background: linear-gradient(135deg, var(--fa-accent) 0%, var(--fa-gold) 100%);
+}
+
+/* Barber pole animation */
+.barber-pole {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--fa-barber-red),
+    var(--fa-barber-red) 10px,
+    white 10px,
+    white 20px,
+    var(--fa-barber-blue) 20px,
+    var(--fa-barber-blue) 30px,
+    white 30px,
+    white 40px
+  );
+  animation: barber-spin 3s linear infinite;
+}
+
+@keyframes barber-spin {
+  0% { background-position: 0px 0px; }
+  100% { background-position: 40px 40px; }
+}
+
+/* Premium card styling */
+.barber-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Button hover effects */
+.barber-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.barber-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.barber-button:hover:before {
+  left: 100%;
 }
