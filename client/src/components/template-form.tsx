@@ -40,8 +40,13 @@ export default function TemplateForm({ onClose, onShowPreview }: TemplateFormPro
 
   const createRequestMutation = useMutation({
     mutationFn: async (data: any) => {
-      const response = await apiRequest("POST", "/api/template-request", data);
-      return response.json();
+      try {
+        const response = await apiRequest("POST", "/api/template-request", data);
+        return response.json();
+      } catch (error: any) {
+        console.error("API request failed:", error);
+        throw error;
+      }
     },
     onSuccess: (data) => {
       onShowPreview(data);
@@ -51,9 +56,18 @@ export default function TemplateForm({ onClose, onShowPreview }: TemplateFormPro
       });
     },
     onError: (error: any) => {
+      console.error("Template form error:", error);
+      let errorMessage = "Failed to generate preview";
+      
+      if (typeof error?.message === 'string') {
+        errorMessage = error.message;
+      } else if (typeof error === 'string') {
+        errorMessage = error;
+      }
+      
       toast({
         title: "Error",
-        description: error.message || "Failed to generate preview",
+        description: errorMessage,
         variant: "destructive",
       });
     },

@@ -43,7 +43,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     } catch (error: any) {
       console.error("Error creating template request:", error);
-      res.status(400).json({ message: error.message });
+      const errorMessage = error?.message || "Failed to create template request";
+      res.status(400).json({ 
+        error: true,
+        message: errorMessage,
+        details: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      });
     }
   });
 
@@ -52,7 +57,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const { requestId } = req.body;
       
       const paymentIntent = await stripe.paymentIntents.create({
-        amount: 19900, // $199.00 in cents
+        amount: 12000, // $120.00 in cents
         currency: "usd",
         metadata: {
           requestId,
