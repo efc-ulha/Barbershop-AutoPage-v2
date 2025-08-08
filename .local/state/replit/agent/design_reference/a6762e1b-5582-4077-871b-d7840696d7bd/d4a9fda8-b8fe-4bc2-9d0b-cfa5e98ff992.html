@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FA Web Design - Barbershop Website Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#3B82F6',
+                        'secondary': '#1E293B',
+                        'accent': '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-slate-50 text-slate-700">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-slate-200">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gradient-to-r from-primary to-accent rounded-lg flex items-center justify-center">
+                    <i class="fas fa-cut text-white text-lg"></i>
+                </div>
+                <span class="text-xl font-bold text-secondary">FA Web Design</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#services" class="text-slate-600 hover:text-primary transition-colors">Services</a>
+                <a href="#about" class="text-slate-600 hover:text-primary transition-colors">About</a>
+                <a href="#contact" class="text-slate-600 hover:text-primary transition-colors">Contact</a>
+                <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                    Get Started
+                </button>
+            </div>
+            <button class="md:hidden text-slate-600">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                Beautiful Barbershop<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+                    Websites in Minutes
+                </span>
+            </h1>
+            <p class="text-xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Get your barbershop online with our AI-powered website generator. Choose from professional templates or get a fully customized design tailored to your business.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="showTemplateForm()" class="bg-primary hover:bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105">
+                    <i class="fas fa-magic mr-2"></i>
+                    Generate Template Website
+                </button>
+                <button onclick="showPersonalizedForm()" class="bg-transparent border-2 border-white hover:bg-white hover:text-slate-900 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all">
+                    <i class="fas fa-palette mr-2"></i>
+                    Get Custom Design
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Comparison -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-secondary mb-4">Choose Your Perfect Solution</h2>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+                    Whether you need a quick launch or a completely custom design, we have the perfect solution for your barbershop.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Template Website Card -->
+                <div class="bg-slate-50 rounded-2xl p-8 border-2 border-slate-200 hover:border-primary transition-all duration-300 hover:shadow-xl">
+                    <div class="text-center mb-8">
+                        <div class="w-16 h-16 bg-gradient-to-r from-primary to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-magic text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-secondary mb-2">Template Website</h3>
+                        <p class="text-slate-600 mb-4">AI-generated content with professional templates</p>
+                        <div class="text-4xl font-bold text-primary mb-2">$199</div>
+                        <p class="text-sm text-slate-500">One-time payment</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span>AI-Generated Content</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span>2 Professional Templates</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span>Live Preview Before Payment</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span>Mobile Responsive Design</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span>Contact Forms & Maps</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span>Same Day Delivery</span>
+                        </li>
+                    </ul>
+                    
+                    <button onclick="showTemplateForm()" class="w-full bg-primary hover:bg-blue-600 text-white py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105">
+                        Start Template Generation
+                    </button>
+                </div>
+
+                <!-- Personalized Website Card -->
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 text-white relative overflow-hidden hover:shadow-2xl transition-all duration-300">
+                    <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        Most Popular
+                    </div>
+                    
+                    <div class="text-center mb-8">
+                        <div class="w-16 h-16 bg-gradient-to-r from-accent to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-palette text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Personalized Website</h3>
+                        <p class="text-slate-300 mb-4">Fully custom design tailored to your brand</p>
+                        <div class="text-4xl font-bold text-accent mb-2">$89</div>
+                        <p class="text-sm text-slate-400">Consultation fee (Applied to final cost)</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span>Custom Design Consultation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span>Unlimited Revisions</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span>Brand Identity Development</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span>Advanced Features & Integrations</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span>SEO Optimization</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span>30-Day Support Included</span>
+                        </li>
+                    </ul>
+                    
+                    <button onclick="showPersonalizedForm()" class="w-full bg-accent hover:bg-emerald-600 text-white py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105">
+                        Start Custom Project
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Template Form Modal -->
+    <div id="templateModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-secondary">Generate Your Template Website</h3>
+                    <button onclick="closeTemplateForm()" class="text-slate-400 hover:text-slate-600">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Template Selection -->
+                <div class="mb-8">
+                    <h4 class="text-lg font-semibold text-secondary mb-4">Choose Your Template</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="template-option border-2 border-slate-200 rounded-lg p-4 cursor-pointer hover:border-primary transition-colors" onclick="selectTemplate('classic')">
+                            <!-- Classic barbershop storefront with vintage signage and red brick exterior -->
+                            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200" alt="Classic Template Preview" class="w-full h-32 object-cover rounded mb-3">
+                            <h5 class="font-semibold text-secondary">Classic Barbershop</h5>
+                            <p class="text-sm text-slate-600">Traditional design with vintage elements</p>
+                        </div>
+                        <div class="template-option border-2 border-slate-200 rounded-lg p-4 cursor-pointer hover:border-primary transition-colors" onclick="selectTemplate('modern')">
+                            <!-- Modern minimalist barbershop interior with clean lines and contemporary styling -->
+                            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200" alt="Modern Template Preview" class="w-full h-32 object-cover rounded mb-3">
+                            <h5 class="font-semibold text-secondary">Modern Minimalist</h5>
+                            <p class="text-sm text-slate-600">Clean, contemporary design</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template Form -->
+                <form id="templateForm" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Full Name *</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="John Smith">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Email Address *</label>
+                            <input type="email" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="john@barbershop.com">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number *</label>
+                            <input type="tel" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="(555) 123-4567">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Business Name *</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Mike's Barbershop">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Business Type</label>
+                            <input type="text" value="Barbershop" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Business Location *</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Downtown Chicago, IL">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Services or Products *</label>
+                        <textarea required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent h-24" placeholder="Men's haircuts, beard trims, hot towel shaves, hair washing..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Short Business Description *</label>
+                        <textarea required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent h-32" placeholder="Tell us about your barbershop's style, atmosphere, and what makes it unique..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Logo Upload (Optional)</label>
+                        <div class="border-2 border-dashed border-slate-300 rounded-lg p-6 text-center hover:border-primary transition-colors">
+                            <i class="fas fa-cloud-upload-alt text-4xl text-slate-400 mb-2"></i>
+                            <p class="text-slate-600">Drop your logo here or <span class="text-primary cursor-pointer">browse files</span></p>
+                            <input type="file" accept="image/*" class="hidden" data-mock-image="true" data-implementation="Use FileUpload component here">
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <button type="button" onclick="generatePreview()" class="flex-1 bg-primary hover:bg-blue-600 text-white py-4 rounded-lg font-semibold text-lg transition-all">
+                            <i class="fas fa-eye mr-2"></i>
+                            Generate Preview
+                        </button>
+                        <button type="button" onclick="closeTemplateForm()" class="px-8 py-4 border border-slate-300 text-slate-700 rounded-lg font-semibold hover:bg-slate-50 transition-colors">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Preview Modal -->
+    <div id="previewModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden">
+            <div class="p-6 border-b border-slate-200 flex justify-between items-center">
+                <h3 class="text-xl font-bold text-secondary">Your Website Preview</h3>
+                <button onclick="closePreview()" class="text-slate-400 hover:text-slate-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="p-6">
+                <!-- AI Generation Loading State -->
+                <div id="loadingState" class="text-center py-12">
+                    <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary mb-4"></div>
+                    <p class="text-lg text-slate-600">Generating your custom content with AI...</p>
+                    <p class="text-sm text-slate-500 mt-2">This may take a few moments</p>
+                </div>
+                
+                <!-- Generated Preview -->
+                <div id="generatedPreview" class="hidden">
+                    <div class="bg-slate-100 rounded-lg p-8 mb-6">
+                        <!-- Sample Generated Website Preview -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <div class="bg-gradient-to-r from-slate-800 to-slate-900 text-white p-8 text-center">
+                                <h1 class="text-3xl font-bold mb-2" data-bind="businessName">Mike's Barbershop</h1>
+                                <p class="text-lg text-slate-300" data-bind="aiTagline">Where Tradition Meets Style - Your Premium Grooming Experience</p>
+                            </div>
+                            
+                            <div class="p-8">
+                                <div class="grid md:grid-cols-2 gap-8">
+                                    <div>
+                                        <h2 class="text-2xl font-bold text-slate-800 mb-4">About Us</h2>
+                                        <p class="text-slate-600 leading-relaxed" data-bind="aiAbout">
+                                            At Mike's Barbershop, we combine time-honored barbering traditions with modern techniques to deliver an exceptional grooming experience. Our skilled barbers are passionate about their craft and dedicated to helping you look and feel your best.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-2xl font-bold text-slate-800 mb-4">Our Services</h2>
+                                        <ul class="space-y-2 text-slate-600">
+                                            <li class="flex items-center">
+                                                <i class="fas fa-cut text-primary mr-2"></i>
+                                                <span data-bind="services">Professional Men's Haircuts</span>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-cut text-primary mr-2"></i>
+                                                <span>Premium Beard Trims & Styling</span>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fas fa-cut text-primary mr-2"></i>
+                                                <span>Relaxing Hot Towel Shaves</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center mt-8">
+                                    <button class="bg-primary text-white px-8 py-3 rounded-lg text-lg font-semibold">
+                                        <span data-bind="aiCTA">Book Your Appointment Today</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <button onclick="proceedToPayment()" class="flex-1 bg-accent hover:bg-emerald-600 text-white py-4 rounded-lg font-semibold text-lg transition-all">
+                            <i class="fas fa-credit-card mr-2"></i>
+                            Deploy My Website - $199
+                        </button>
+                        <button onclick="requestPersonalization()" class="flex-1 bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white py-4 rounded-lg font-semibold text-lg transition-all">
+                            <i class="fas fa-palette mr-2"></i>
+                            Request Personalization
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Personalized Form Modal -->
+    <div id="personalizedModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-secondary">Custom Website Design Consultation</h3>
+                    <button onclick="closePersonalizedForm()" class="text-slate-400 hover:text-slate-600">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                
+                <form id="personalizedForm" class="space-y-6">
+                    <!-- Basic Information -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-secondary mb-4 flex items-center">
+                            <i class="fas fa-user mr-2 text-primary"></i>
+                            Basic Information
+                        </h4>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Full Name *</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Email Address *</label>
+                                <input type="email" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number *</label>
+                                <input type="tel" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Business Name *</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business Details -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-secondary mb-4 flex items-center">
+                            <i class="fas fa-store mr-2 text-primary"></i>
+                            Business Details
+                        </h4>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Business Location *</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Detailed Business Description *</label>
+                                <textarea required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent h-32" placeholder="Tell us about your barbershop's history, atmosphere, target customers, and unique selling points..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Design Preferences -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-secondary mb-4 flex items-center">
+                            <i class="fas fa-palette mr-2 text-primary"></i>
+                            Design Preferences
+                        </h4>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Preferred Color Scheme</label>
+                                <select class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <option>Classic (Black, White, Red)</option>
+                                    <option>Modern (Blues, Grays, White)</option>
+                                    <option>Vintage (Browns, Golds, Cream)</option>
+                                    <option>Bold (Custom colors)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Website Style Preference</label>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <label class="flex items-center p-4 border border-slate-300 rounded-lg cursor-pointer hover:border-primary">
+                                        <input type="radio" name="style" value="classic" class="mr-3">
+                                        <div>
+                                            <div class="font-medium">Classic/Traditional</div>
+                                            <div class="text-sm text-slate-600">Timeless, professional look</div>
+                                        </div>
+                                    </label>
+                                    <label class="flex items-center p-4 border border-slate-300 rounded-lg cursor-pointer hover:border-primary">
+                                        <input type="radio" name="style" value="modern" class="mr-3">
+                                        <div>
+                                            <div class="font-medium">Modern/Minimalist</div>
+                                            <div class="text-sm text-slate-600">Clean, contemporary design</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature Requirements -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-secondary mb-4 flex items-center">
+                            <i class="fas fa-cogs mr-2 text-primary"></i>
+                            Feature Requirements
+                        </h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <label class="flex items-center p-3 border border-slate-300 rounded-lg cursor-pointer hover:border-primary">
+                                <input type="checkbox" class="mr-3">
+                                <span>Online Booking System</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-slate-300 rounded-lg cursor-pointer hover:border-primary">
+                                <input type="checkbox" class="mr-3">
+                                <span>Photo Gallery</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-slate-300 rounded-lg cursor-pointer hover:border-primary">
+                                <input type="checkbox" class="mr-3">
+                                <span>Customer Reviews</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-slate-300 rounded-lg cursor-pointer hover:border-primary">
+                                <input type="checkbox" class="mr-3">
+                                <span>Social Media Integration</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-slate-300 rounded-lg cursor-pointer hover:border-primary">
+                                <input type="checkbox" class="mr-3">
+                                <span>E-commerce (Products)</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-slate-300 rounded-lg cursor-pointer hover:border-primary">
+                                <input type="checkbox" class="mr-3">
+                                <span>Blog/News Section</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Additional Requirements -->
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Additional Requirements or Inspirations</label>
+                        <textarea class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent h-24" placeholder="Any specific features, websites you like, or special requirements..."></textarea>
+                    </div>
+                    
+                    <div class="flex gap-4">
+                        <button type="button" onclick="proceedToConsultationPayment()" class="flex-1 bg-accent hover:bg-emerald-600 text-white py-4 rounded-lg font-semibold text-lg transition-all">
+                            <i class="fas fa-credit-card mr-2"></i>
+                            Book Consultation - $89
+                        </button>
+                        <button type="button" onclick="closePersonalizedForm()" class="px-8 py-4 border border-slate-300 text-slate-700 rounded-lg font-semibold hover:bg-slate-50 transition-colors">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-8 text-center">
+            <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-check text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-secondary mb-4">Payment Successful!</h3>
+            <p class="text-slate-600 mb-6" id="successMessage">
+                Your website has been generated and will be deployed within 24 hours. You'll receive an email with your website link and login details.
+            </p>
+            <button onclick="closeSuccessModal()" class="bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                Got it!
+            </button>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold text-secondary mb-6">Why Choose FA Web Design?</h2>
+                <p class="text-xl text-slate-600 mb-12">
+                    We specialize in creating stunning websites for barbershops and salons that convert visitors into customers.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-rocket text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary mb-3">Fast Delivery</h3>
+                        <p class="text-slate-600">Template websites delivered same day, custom designs within 7 days.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary mb-3">Mobile Optimized</h3>
+                        <p class="text-slate-600">All websites are fully responsive and optimized for mobile devices.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-orange-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-headset text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary mb-3">Ongoing Support</h3>
+                        <p class="text-slate-600">We provide continued support and maintenance for all our websites.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary to-accent rounded-lg flex items-center justify-center">
+                            <i class="fas fa-cut text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">FA Web Design</span>
+                    </div>
+                    <p class="text-slate-300">
+                        Creating beautiful websites for barbershops and salons worldwide.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-slate-300">
+                        <li><a href="#" class="hover:text-white transition-colors">Template Websites</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Custom Design</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">SEO Optimization</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Maintenance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-slate-300">
+                        <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-slate-300">
+                        <li><i class="fas fa-envelope mr-2"></i>hello@fawebdesign.com</li>
+                        <li><i class="fas fa-phone mr-2"></i>(555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>New York, NY</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 mt-8 pt-8 text-center text-slate-400">
+                <p>&copy; 2024 FA Web Design. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Global variables
+        let selectedTemplate = null;
+
+        // Template form functions
+        function showTemplateForm() {
+            document.getElementById('templateModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTemplateForm() {
+            document.getElementById('templateModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function selectTemplate(templateType) {
+            selectedTemplate = templateType;
+            
+            // Remove previous selections
+            document.querySelectorAll('.template-option').forEach(option => {
+                option.classList.remove('border-primary', 'bg-blue-50');
+                option.classList.add('border-slate-200');
+            });
+            
+            // Highlight selected template
+            event.currentTarget.classList.remove('border-slate-200');
+            event.currentTarget.classList.add('border-primary', 'bg-blue-50');
+        }
+
+        function generatePreview() {
+            if (!selectedTemplate) {
+                alert('Please select a template first.');
+                return;
+            }
+            
+            // TODO: Validate form data before proceeding
+            // TODO: Implement form validation and error handling
+            
+            closeTemplateForm();
+            document.getElementById('previewModal').classList.remove('hidden');
+            
+            // Show loading state
+            document.getElementById('loadingState').classList.remove('hidden');
+            document.getElementById('generatedPreview').classList.add('hidden');
+            
+            // Simulate AI generation (replace with actual API call)
+            setTimeout(() => {
+                // TODO: Implement actual AI content generation using OpenAI API
+                // TODO: Generate headline, tagline, about section, service descriptions, and CTA
+                
+                document.getElementById('loadingState').classList.add('hidden');
+                document.getElementById('generatedPreview').classList.remove('hidden');
+            }, 3000);
+        }
+
+        function closePreview() {
+            document.getElementById('previewModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Personalized form functions
+        function showPersonalizedForm() {
+            document.getElementById('personalizedModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePersonalizedForm() {
+            document.getElementById('personalizedModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Payment functions
+        function proceedToPayment() {
+            // TODO: Implement Stripe payment integration for template website ($199)
+            // TODO: Save generated HTML file with unique name
+            // TODO: Send confirmation email with website link
+            
+            closePreview();
+            showSuccessModal('Your website has been generated and will be deployed within 24 hours. You\'ll receive an email with your website link and login details.');
+        }
+
+        function proceedToConsultationPayment() {
+            // TODO: Implement Stripe payment integration for consultation fee ($89)
+            // TODO: Store personalized request in PostgreSQL database
+            // TODO: Send automated email to customer confirming consultation booking
+            // TODO: Send notification to admin dashboard about new personalized request
+            
+            closePersonalizedForm();
+            showSuccessModal('Thank you for booking a consultation! You\'ll receive an email shortly to schedule your design session. We\'ll contact you within 24 hours.');
+        }
+
+        function requestPersonalization() {
+            closePreview();
+            showPersonalizedForm();
+        }
+
+        function showSuccessModal(message) {
+            document.getElementById('successMessage').textContent = message;
+            document.getElementById('successModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            const modals = ['templateModal', 'previewModal', 'personalizedModal', 'successModal'];
+            modals.forEach(modalId => {
+                const modal = document.getElementById(modalId);
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
