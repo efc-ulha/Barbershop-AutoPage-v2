@@ -39,7 +39,7 @@ export default function HeroSection({ onShowTemplateForm, onShowPersonalizedForm
           >
             <i className="fas fa-magic mr-3"></i>
             Quick Template Website
-            <div className="text-sm opacity-90 mt-1">Ready in 5 minutes • $199</div>
+            <div className="text-sm opacity-90 mt-1">Preview ready in 5 minutes • $120 + $8/mo</div>
           </button>
           
           <div className="text-slate-400 font-medium">OR</div>

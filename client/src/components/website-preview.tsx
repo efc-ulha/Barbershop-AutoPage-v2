@@ -82,7 +82,7 @@ export default function WebsitePreview({ data, onClose, onRequestPersonalization
             className="flex-1 bg-fa-accent hover:bg-emerald-600 text-white"
           >
             <i className="fas fa-credit-card mr-2"></i>
-            Deploy My Website - $199
+            Deploy My Website - $120 + $8/mo
           </Button>
           <Button 
             onClick={onRequestPersonalization}
