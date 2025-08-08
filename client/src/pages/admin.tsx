@@ -1,4 +1,5 @@
-import { useQuery, useMutation, queryClient } from "@tanstack/react-query";
+import { useQuery, useMutation } from "@tanstack/react-query";
+import { queryClient } from "@/lib/queryClient";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -71,7 +72,7 @@ export default function Admin() {
         </div>
 
         <div className="space-y-6">
-          {requests?.map((request: any) => (
+          {(requests as any[])?.map((request: any) => (
             <Card key={request.id} className="border-slate-200">
               <CardHeader>
                 <div className="flex justify-between items-start">
@@ -161,7 +162,7 @@ export default function Admin() {
             </Card>
           ))}
 
-          {requests?.length === 0 && (
+          {(requests as any[])?.length === 0 && (
             <Card>
               <CardContent className="p-12 text-center">
                 <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">

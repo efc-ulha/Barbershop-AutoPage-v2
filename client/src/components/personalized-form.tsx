@@ -288,11 +288,12 @@ export default function PersonalizedForm({ onClose }: PersonalizedFormProps) {
                                     <Checkbox
                                       checked={field.value?.includes(feature)}
                                       onCheckedChange={(checked) => {
+                                        const currentValue = field.value || [];
                                         return checked
-                                          ? field.onChange([...field.value, feature])
+                                          ? field.onChange([...currentValue, feature])
                                           : field.onChange(
-                                              field.value?.filter(
-                                                (value) => value !== feature
+                                              currentValue.filter(
+                                                (value: string) => value !== feature
                                               )
                                             )
                                       }}

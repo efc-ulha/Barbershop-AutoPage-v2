@@ -1,9 +1,9 @@
-import Navigation from "@/components/navigation";
-import HeroSection from "@/components/hero-section";
-import ServiceComparison from "@/components/service-comparison";
-import TemplateForm from "@/components/template-form";
-import PersonalizedForm from "@/components/personalized-form";
-import WebsitePreview from "@/components/website-preview";
+import Navigation from "../components/navigation";
+import HeroSection from "../components/hero-section";
+import ServiceComparison from "../components/service-comparison";
+import TemplateForm from "../components/template-form";
+import PersonalizedForm from "../components/personalized-form";
+import WebsitePreview from "../components/website-preview";
 import { useState } from "react";
 
 export default function Home() {
